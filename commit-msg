@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# The hook gets a Jira issue ID from the branch name and adds it to the beginning of a commit message
+# Branch name must contain a valid Jira issue ID
+# Examples of valid branch names:
+#   feature/JR-123/name_parser
+#   bugfix/BG-555/null_ref_in_init
+#   TD-32
+#   JR-765/weird_fix
+
+echo "Trying to prepend a Jira ID to the commit message"
+
+REGEX="([A-Z]+-)+\d+"
+BRANCH=$(git symbolic-ref --short HEAD)
+JIRA_ID=$(echo "$BRANCH" | grep -oP $REGEX)
+
+echo "Branch: $BRANCH"
+
+if [[ ! -z "$JIRA_ID" ]]; then
+    echo "Jira ID: $JIRA_ID"
+    sed -i "1s;^;$JIRA_ID: ;" $1
+    echo "Done"
+else
+    echo "Jira ID not found, no changes"
+fi
+
+exit 0
