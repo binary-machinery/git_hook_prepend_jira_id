@@ -10,6 +10,8 @@
 
 echo "Trying to prepend a Jira ID to the commit message"
 
+LC_ALL=en_US.utf8
+
 REGEX="([A-Z]+-)+\d+"
 BRANCH=$(git symbolic-ref --short HEAD)
 JIRA_ID=$(echo "$BRANCH" | grep -oP $REGEX)
