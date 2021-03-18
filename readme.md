@@ -7,5 +7,6 @@ Examples of valid branch names:
 - bugfix/BG-555/null_ref_in_init
 - TD-32
 - JR-765_weird_fix
+- test-GR-234-test
 
 Works both on Linux and Windows (with git bash)
