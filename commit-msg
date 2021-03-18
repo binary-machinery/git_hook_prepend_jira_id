@@ -6,7 +6,7 @@
 #   feature/JR-123/name_parser
 #   bugfix/BG-555/null_ref_in_init
 #   TD-32
-#   JR-765/weird_fix
+#   JR-765_weird_fix
 
 echo "Trying to prepend a Jira ID to the commit message"
 
