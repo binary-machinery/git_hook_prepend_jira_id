@@ -6,6 +6,6 @@ Examples of valid branch names:
 - feature/JR-123/name_parser
 - bugfix/BG-555/null_ref_in_init
 - TD-32
-- JR-765/weird_fix
+- JR-765_weird_fix
 
 Works both on Linux and Windows (with git bash)
